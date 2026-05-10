@@ -193,6 +193,21 @@
             line-height: 1.6;
         }
 
+        .info-box {
+            background: var(--accent);
+            color: white;
+            padding: 40px;
+            border-radius: 30px;
+            margin-top: 60px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
         /* SIDE PANEL */
         #side-panel {
             position: fixed;
@@ -203,7 +218,6 @@
             background: var(--panel-bg);
             z-index: 3000;
             box-shadow: -20px 0 60px rgba(0,0,0,0.3);
-            /* Korrigierte Transition für bessere Performance */
             transition: right 0.6s cubic-bezier(0.77, 0, 0.175, 1);
             padding: 100px 50px;
             overflow-y: auto;
@@ -284,12 +298,11 @@
 <div class="container">
     <section>
         <h2>Der historische Aufbruch</h2>
-        <p>Vom 27. bis 30. Mai 1832 verwandelte sich das <span class="term" tabindex="0" role="button" aria-label="Hambacher Schloss erklären" data-def="Hambacher Schloss">Hambacher Schloss</span> in das Zentrum der deutschen <span class="term" tabindex="0" role="button" aria-label="Nationalbewegung erklären" data-def="Nationalbewegung">Nationalbewegung</span>. In einer Ära, die von der <span class="term" tabindex="0" role="button" aria-label="Restauration erklären" data-def="Restauration">Restauration</span> und dem Rückzug ins <span class="term" tabindex="0" role="button" aria-label="Biedermeier erklären" data-def="Biedermeier">Biedermeier</span> geprägt war, forderten knapp 30.000 Menschen <span class="term" tabindex="0" role="button" aria-label="Volkssouveränität erklären" data-def="Volkssouveränität">Volkssouveränität</span> und ein geeintes Deutschland.</p>
+        <p>Vom 27. bis 30. Mai 1832 verwandelte sich das <span class="term" tabindex="0" role="button" aria-label="Hambacher Schloss erklären" data-def="Hambacher Schloss">Hambacher Schloss</span> in das Zentrum der deutschen <span class="term" tabindex="0" role="button" aria-label="Nationalbewegung erklären" data-def="Nationalbewegung">Nationalbewegung</span>. In einer Ära, die von der <span class="term" tabindex="0" role="button" aria-label="Restauration erklären" data-def="Restauration">Restauration</span> und dem politischen <span class="term" tabindex="0" role="button" aria-label="Vormärz erklären" data-def="Vormärz">Vormärz</span> geprägt war, forderten knapp 30.000 Menschen <span class="term" tabindex="0" role="button" aria-label="Volkssouveränität erklären" data-def="Volkssouveränität">Volkssouveränität</span> und ein geeintes Deutschland.</p>
         
         <p>Einzigartig war die Rolle der Frauen: Entgegen aller gesellschaftlichen Konventionen rief <span class="term" tabindex="0" role="button" aria-label="Siebenpfeiffer erklären" data-def="Siebenpfeiffer">Philipp Jakob Siebenpfeiffer</span> sie ausdrücklich zur Teilnahme auf.</p>
         
         <div class="quote-card">
-            <!-- Grammatik-Fehler behoben: "politischen Rechte" -->
             "Auch die deutschen Frauen, denen das Gesetz die politischen Rechte verweigert, sind als Genossinnen des freien Bürgers zur Teilnahme geladen."
         </div>
         
@@ -298,16 +311,21 @@
 
     <section>
         <h2>Das Banner der Freiheit</h2>
-        <p>Das wichtigste Symbol des Festes war die <span class="term" tabindex="0" role="button" aria-label="Urfahne erklären" data-def="Urfahne">Hambacher Urfahne</span>. Frauen aus Neustadt an der Haardt, koordiniert von <span class="term" tabindex="0" role="button" aria-label="Abresch erklären" data-def="Abresch">Katharina Abresch</span>, fertigten sie in mühevoller Handarbeit an. Als zentrale Botschaft stickten sie in goldenen Lettern die Worte <span class="term" tabindex="0" role="button" aria-label="Wiedergeburt erklären" data-def="Wiedergeburt">"Deutschlands Wiedergeburt"</span> auf den mittleren roten Streifen der Fahne.</p>
+        <p>Das wichtigste Symbol des Festes war die <span class="term" tabindex="0" role="button" aria-label="Urfahne erklären" data-def="Urfahne">Hambacher Urfahne</span>. In vielen Geschichtsbüchern wird sie bis heute vor allem Johann Philipp Abresch zugeschrieben, der sie auf das Schloss trug. Doch die eigentliche handwerkliche Arbeit im Hintergrund leisteten Frauen: Koordiniert von seiner Frau <span class="term" tabindex="0" role="button" aria-label="Abresch erklären" data-def="Abresch">Katharina Abresch</span> fertigten Frauen aus Neustadt die Fahne in mühevoller Handarbeit an. Als zentrale Botschaft stickten sie in goldenen Lettern die Worte <span class="term" tabindex="0" role="button" aria-label="Wiedergeburt erklären" data-def="Wiedergeburt">"Deutschlands Wiedergeburt"</span> auf den mittleren roten Streifen.</p>
         
-        <p>Neben den großen Bannern trugen viele Teilnehmerinnen <span class="term" tabindex="0" role="button" aria-label="Kokarden erklären" data-def="Kokarden">Kokarden</span> und Schärpen in Schwarz-Rot-Gold. Eine der profiliertesten jungen Frauen vor Ort war <span class="term" tabindex="0" role="button" aria-label="Hitzfeld erklären" data-def="Hitzfeld">Mathilde Hitzfeld</span>. Sie wurde später als „Heldin der Pfalz“ bekannt, weil sie trotz strengster staatlicher <span class="term" tabindex="0" role="button" aria-label="Zensur erklären" data-def="Zensur">Zensur</span> und drohender Verfolgung unerschütterlich für den <span class="term" tabindex="0" role="button" aria-label="Liberalismus erklären" data-def="Liberalismus">Liberalismus</span> eintrat.</p>
+        <p>Neben den großen Bannern trugen viele Teilnehmerinnen <span class="term" tabindex="0" role="button" aria-label="Kokarden erklären" data-def="Kokarden">Kokarden</span> und Schärpen in Schwarz-Rot-Gold. Der "Geist von Hambach" prägte eine ganze Generation: Junge Mädchen wie <span class="term" tabindex="0" role="button" aria-label="Hitzfeld erklären" data-def="Hitzfeld">Mathilde Hitzfeld</span> (die 1832 erst 6 Jahre alt war) wurden durch diese mutigen Frauen so inspiriert, dass sie Jahre später in der Revolution 1848/49 selbst zu bekannten Freiheitskämpferinnen wurden.</p>
     </section>
 
     <section>
         <h2>Das Erbe von Hambach</h2>
         <p>Nach dem Fest reagierten die Fürsten mit harten Strafen und Verhaftungswellen. Doch der Widerstand lebte in den ersten <span class="term" tabindex="0" role="button" aria-label="Frauenvereine erklären" data-def="Frauenvereine">Frauenvereinen</span> weiter. Diese Gruppen organisierten heimlich Spenden für inhaftierte <span class="term" tabindex="0" role="button" aria-label="Patrioten erklären" data-def="Patrioten">Patrioten</span> und hielten die Idee der Demokratie in ihren Familien wach.</p>
         
-        <p>Obwohl die spätere <span class="term" tabindex="0" role="button" aria-label="Revolution erklären" data-def="Revolution">Märzrevolution 1848</span> scheiterte, war der Geist von Hambach nicht mehr auszulöschen. Der lange Weg zum allgemeinen <span class="term" tabindex="0" role="button" aria-label="Wahlrecht erklären" data-def="Wahlrecht">Wahlrecht</span> für Frauen, das erst 1918 erreicht wurde, nahm genau hier seinen Anfang – an einem Ort, an dem Frauen erstmals öffentlich als gleichwertige politische Akteurinnen sichtbar wurden.</p>
+        <p>Obwohl die spätere <span class="term" tabindex="0" role="button" aria-label="Revolution erklären" data-def="Revolution">Märzrevolution 1848</span> scheiterte, war der Geist von Hambach nicht mehr auszulöschen. Der lange Weg zum allgemeinen <span class="term" tabindex="0" role="button" aria-label="Wahlrecht erklären" data-def="Wahlrecht">Wahlrecht</span> für Frauen, das erst 1918 erreicht wurde, nahm genau hier seinen Anfang.</p>
+        
+        <div class="info-box">
+            <h3>Wusstest du schon?</h3>
+            <p>Während Männer wie Siebenpfeiffer auf den Tribünen Reden hielten, war die Arbeit der Frauen oft "unsichtbar". Sie nähten nicht nur die Fahnen und Kokarden, sondern sorgten durch das Sammeln von Spenden auch dafür, dass die Bewegung nach der Niederschlagung durch die Fürsten finanziell überleben konnte.</p>
+        </div>
     </section>
 </div>
 
@@ -341,32 +359,31 @@
         setTheme(isDark ? 'light' : 'dark');
     });
 
-    // Theme beim Laden prüfen
     setTheme(localStorage.getItem('theme') || 'light');
 
-    // GLOSSAR DATEN (Alle Begriffe lückenlos erklärt!)
+    // GLOSSAR DATEN
     const defs = {
-        'Hambacher Schloss': 'Eine heutige Schlossruine bei Neustadt an der Weinstraße. Sie gilt als "Wiege der deutschen Demokratie", da hier 1832 das erste große Freiheitsfest stattfand.',
-        'Nationalbewegung': 'Eine politische Strömung des 19. Jahrhunderts mit dem Ziel, die vielen zersplitterten deutschen Kleinstaaten zu einem einzigen, freien Nationalstaat zu vereinen.',
-        'Restauration': 'Die Epoche nach 1815, in der die Fürsten versuchten, die alte monarchische Ordnung (von vor Napoleon) wiederherzustellen und bürgerliche Freiheiten massiv unterdrückten.',
-        'Biedermeier': 'Die Zeit von 1815 bis 1848, geprägt von einem gesellschaftlichen Rückzug ins Private (Häuslichkeit, Familie), oft aus Angst vor politischer Verfolgung durch den Staat.',
-        'Volkssouveränität': 'Das demokratische Grundprinzip, dass alle Staatsgewalt vom Volk ausgeht und nicht von einem von Gott eingesetzten Monarchen.',
-        'Siebenpfeiffer': 'Philipp Jakob Siebenpfeiffer (1789–1845) war ein radikaler Journalist und der Hauptorganisator des Hambacher Festes. Er forderte vehement Pressefreiheit und eine Republik.',
-        'Genossinnen': 'Ein für die damalige Zeit hochmoderner und fast revolutionärer Begriff, der Frauen als gleichberechtigte Partnerinnen im politischen Kampf ansprach.',
-        'Urfahne': 'Die erste schwarz-rot-goldene Flagge in der heutigen Bedeutung. Sie wurde 1832 von Frauen genäht und als Hauptbanner auf das Schloss getragen.',
-        'Abresch': 'Katharina Abresch war die Ehefrau eines Neustadter Kaufmanns. Sie organisierte und leitete die Gruppe der Frauen, welche die Hauptfahne fertigten.',
-        'Wiedergeburt': 'Die gestickte Inschrift "Deutschlands Wiedergeburt" auf der Urfahne symbolisierte den starken Wunsch, dass Deutschland als freie, geeinte Nation neu geboren werden sollte.',
-        'Kokarden': 'Runde Stoffabzeichen in den Nationalfarben (Schwarz-Rot-Gold), die mutig und offen an Hüten oder der Kleidung getragen wurden, um politische Gesinnung zu zeigen.',
-        'Hitzfeld': 'Mathilde Hitzfeld war eine junge, couragierte Aktivistin aus Kirchheimbolanden. Sie wurde nach dem Fest zum Symbol für den weiblichen Widerstand gegen die bayerische Justiz.',
-        'Zensur': 'Die staatliche Überprüfung und strenge Unterdrückung von Druckerzeugnissen (Zeitungen, Bücher), um Kritik am Herrschaftssystem der Fürsten zu verhindern.',
-        'Liberalismus': 'Eine politische Weltanschauung, die die Freiheit des Einzelnen, eine geschriebene Verfassung und die Begrenzung der monarchischen Herrschermacht fordert.',
-        'Frauenvereine': 'Frühe politische Zusammenschlüsse von Frauen, die oft im Geheimen arbeiten mussten, um inhaftierte Demokraten zu unterstützen und politische Bildung zu fördern.',
-        'Patrioten': 'In der Sprache der damaligen Zeit bezeichnete dies Menschen, die sich für Einheit, Freiheit und Verfassung ihres Vaterlandes einsetzten (nicht zu verwechseln mit heutigem Nationalismus).',
-        'Revolution': 'Gemeint ist die gewaltsame Erhebung des Volkes in der Märzrevolution 1848, die direkt auf den Forderungen von Hambach aufbaute und ein Parlament erzwang.',
-        'Wahlrecht': 'Das Recht der Bürger, Volksvertreter zu wählen. In Deutschland durften Frauen erst nach dem Ersten Weltkrieg (während der Novemberrevolution 1918) das erste Mal wählen.'
+        'Hambacher Schloss': 'Eine Schlossruine bei Neustadt an der Weinstraße. Sie gilt als "Wiege der deutschen Demokratie", da hier 1832 das erste große Freiheitsfest stattfand.',
+        'Nationalbewegung': 'Eine politische Strömung des 19. Jahrhunderts mit dem Ziel, die vielen deutschen Kleinstaaten zu einem einzigen, freien Nationalstaat zu vereinen.',
+        'Vormärz': 'Die politische Epoche vor der Märzrevolution 1848. Sie war geprägt von dem Streben nach Einheit und Freiheit gegen die Unterdrückung durch die Fürsten.',
+        'Restauration': 'Die Epoche nach 1815, in der die Fürsten versuchten, die alte monarchische Ordnung wiederherzustellen und Freiheiten massiv unterdrückten.',
+        'Biedermeier': 'Die Zeit von 1815 bis 1848, geprägt von einem gesellschaftlichen Rückzug ins Private, oft aus Angst vor politischer Verfolgung durch den Staat.',
+        'Volkssouveränität': 'Das demokratische Prinzip, dass alle Staatsgewalt vom Volk ausgeht und nicht von einem Monarchen.',
+        'Siebenpfeiffer': 'Philipp Jakob Siebenpfeiffer (1789–1845) war ein Journalist und Hauptorganisator des Festes. Er forderte Pressefreiheit und eine Republik.',
+        'Genossinnen': 'Ein damals hochmoderner Begriff, der Frauen als gleichberechtigte Partnerinnen im politischen Kampf ansprach.',
+        'Urfahne': 'Die erste schwarz-rot-goldene Flagge in der heutigen Bedeutung. Während Männer sie trugen, übernahmen Frauen die handwerkliche Fertigung.',
+        'Abresch': 'Katharina Abresch leitete die Gruppe der Frauen, welche die Hauptfahne fertigten, während ihr Mann Johann Philipp sie offiziell trug.',
+        'Wiedergeburt': 'Die Inschrift "Deutschlands Wiedergeburt" symbolisierte den Wunsch, dass Deutschland als freie Nation neu geboren werden sollte.',
+        'Kokarden': 'Runde Stoffabzeichen in Nationalfarben, die mutig an der Kleidung getragen wurden.',
+        'Hitzfeld': 'Mathilde Hitzfeld (1826–1905) war 1832 noch ein Kind, wurde aber später in der Revolution 1848/49 als „Heldin der Pfalz“ bekannt.',
+        'Zensur': 'Die staatliche Unterdrückung von freien Meinungen in Zeitungen und Büchern.',
+        'Liberalismus': 'Eine Weltanschauung, die die Freiheit des Einzelnen, eine Verfassung und die Begrenzung der Herrschermacht fordert.',
+        'Frauenvereine': 'Politische Zusammenschlüsse von Frauen, die inhaftierte Demokraten unterstützten.',
+        'Patrioten': 'Menschen, die sich damals für Einheit und Freiheit ihres Landes einsetzten.',
+        'Revolution': 'Die Märzrevolution 1848, die direkt auf den Forderungen von Hambach aufbaute.',
+        'Wahlrecht': 'Das Recht zu wählen. In Deutschland durften Frauen erst ab 1918 das erste Mal wählen.'
     };
 
-    // UI LOGIC (Seiten-Panel öffnen/schließen)
     function openPanel(id) {
         document.getElementById('panel-title').innerText = id;
         document.getElementById('panel-content').innerText = defs[id] || 'Definition nicht gefunden.';
@@ -381,7 +398,6 @@
         document.getElementById('overlay').style.display = 'none';
     }
 
-    // Event Listener für Maus und Tastatur (Barrierefreiheit)
     document.querySelectorAll('.term').forEach(t => {
         t.addEventListener('click', () => openPanel(t.dataset.def));
         t.addEventListener('keydown', (e) => {
@@ -394,21 +410,18 @@
 
     document.getElementById('overlay').onclick = closePanel;
 
-    // ESC-TASTEN FUNKTION HINZUGEFÜGT
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && document.getElementById('side-panel').classList.contains('active')) {
             closePanel();
         }
     });
 
-    // SCROLL ANIMATIONS (Fade-In der Sektionen)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.15 });
 
     document.querySelectorAll('section').forEach(s => observer.observe(s));
 
-    // PROGRESS BAR LOGIC
     window.onscroll = () => {
         let winScroll = document.documentElement.scrollTop;
         let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
