@@ -203,7 +203,8 @@
             background: var(--panel-bg);
             z-index: 3000;
             box-shadow: -20px 0 60px rgba(0,0,0,0.3);
-            transition: cubic-bezier(0.77, 0, 0.175, 1) 0.6s;
+            /* Korrigierte Transition für bessere Performance */
+            transition: right 0.6s cubic-bezier(0.77, 0, 0.175, 1);
             padding: 100px 50px;
             overflow-y: auto;
         }
@@ -288,7 +289,8 @@
         <p>Einzigartig war die Rolle der Frauen: Entgegen aller gesellschaftlichen Konventionen rief <span class="term" tabindex="0" role="button" aria-label="Siebenpfeiffer erklären" data-def="Siebenpfeiffer">Philipp Jakob Siebenpfeiffer</span> sie ausdrücklich zur Teilnahme auf.</p>
         
         <div class="quote-card">
-            "Auch die deutschen Frauen, denen das Gesetz die politische Rechte verweigert, sind als Genossinnen des freien Bürgers zur Teilnahme geladen."
+            <!-- Grammatik-Fehler behoben: "politischen Rechte" -->
+            "Auch die deutschen Frauen, denen das Gesetz die politischen Rechte verweigert, sind als Genossinnen des freien Bürgers zur Teilnahme geladen."
         </div>
         
         <p>Sie kamen als <span class="term" tabindex="0" role="button" aria-label="Genossinnen erklären" data-def="Genossinnen">Genossinnen</span> – ein Begriff, der damals eine politische Gleichberechtigung auf Augenhöhe suggerierte, die erst fast 100 Jahre später Gesetz werden sollte.</p>
@@ -358,7 +360,7 @@
         'Hitzfeld': 'Mathilde Hitzfeld war eine junge, couragierte Aktivistin aus Kirchheimbolanden. Sie wurde nach dem Fest zum Symbol für den weiblichen Widerstand gegen die bayerische Justiz.',
         'Zensur': 'Die staatliche Überprüfung und strenge Unterdrückung von Druckerzeugnissen (Zeitungen, Bücher), um Kritik am Herrschaftssystem der Fürsten zu verhindern.',
         'Liberalismus': 'Eine politische Weltanschauung, die die Freiheit des Einzelnen, eine geschriebene Verfassung und die Begrenzung der monarchischen Herrschermacht fordert.',
-        'Frauenvereine': 'Frühe politische Zusammenschlüsse von Frauen, die oft im Geheimen arbeiteten mussten, um inhaftierte Demokraten zu unterstützen und politische Bildung zu fördern.',
+        'Frauenvereine': 'Frühe politische Zusammenschlüsse von Frauen, die oft im Geheimen arbeiten mussten, um inhaftierte Demokraten zu unterstützen und politische Bildung zu fördern.',
         'Patrioten': 'In der Sprache der damaligen Zeit bezeichnete dies Menschen, die sich für Einheit, Freiheit und Verfassung ihres Vaterlandes einsetzten (nicht zu verwechseln mit heutigem Nationalismus).',
         'Revolution': 'Gemeint ist die gewaltsame Erhebung des Volkes in der Märzrevolution 1848, die direkt auf den Forderungen von Hambach aufbaute und ein Parlament erzwang.',
         'Wahlrecht': 'Das Recht der Bürger, Volksvertreter zu wählen. In Deutschland durften Frauen erst nach dem Ersten Weltkrieg (während der Novemberrevolution 1918) das erste Mal wählen.'
@@ -391,6 +393,13 @@
     });
 
     document.getElementById('overlay').onclick = closePanel;
+
+    // ESC-TASTEN FUNKTION HINZUGEFÜGT
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.getElementById('side-panel').classList.contains('active')) {
+            closePanel();
+        }
+    });
 
     // SCROLL ANIMATIONS (Fade-In der Sektionen)
     const observer = new IntersectionObserver((entries) => {
