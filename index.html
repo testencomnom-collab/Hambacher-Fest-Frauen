@@ -1,3 +1,4 @@
+html_content_v4 = """
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -8,12 +9,11 @@
     <style>
         /* CSS VARIABLEN FÜR THEMES */
         :root {
-            /* Light Mode (Standard) */
             --bg-color: #f8f9fa;
             --surface: rgba(255, 255, 255, 0.9);
             --text-main: #1a1a1a;
             --text-muted: #636e72;
-            --accent: #e63946; /* Rot */
+            --accent: #e63946; 
             --gold: #ffb703;
             --header-overlay: rgba(0,0,0,0.4);
             --shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -23,7 +23,6 @@
         }
 
         [data-theme="dark"] {
-            /* Dark Mode */
             --bg-color: #0f0f0f;
             --surface: rgba(28, 28, 28, 0.9);
             --text-main: #f5f5f5;
@@ -77,9 +76,10 @@
             transition: var(--transition);
         }
 
-        .icon-btn:hover {
+        .icon-btn:hover, .icon-btn:focus {
             transform: translateY(-3px);
             border-color: var(--accent);
+            outline: none;
         }
 
         /* PROGRESS BAR */
@@ -172,11 +172,14 @@
             cursor: help;
             border-bottom: 2px solid transparent;
             transition: var(--transition);
+            display: inline-block;
         }
 
-        .term:hover {
+        .term:hover, .term:focus {
             border-bottom-color: var(--accent);
             background: rgba(230, 57, 70, 0.1);
+            outline: none;
+            border-radius: 4px;
         }
 
         .quote-card {
@@ -229,6 +232,11 @@
             cursor: pointer;
         }
 
+        .close-btn:focus {
+            outline: 2px solid var(--accent);
+            border-radius: 4px;
+        }
+
         #overlay {
             position: fixed;
             inset: 0;
@@ -260,7 +268,6 @@
 <nav>
     <button class="icon-btn" id="theme-toggle" aria-label="Farbschema wechseln">
         <svg id="theme-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <!-- Moon Icon (Default) -->
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
     </button>
@@ -268,34 +275,34 @@
 
 <header>
     <h1>Die Frauen von Hambach</h1>
-    <p>Ein interaktiver Rückblick auf den Mut und die Entschlossenheit der Frauen im Jahr 1832.</p>
+    <p>Ein interaktiver Rückblick auf den Mut und die Entschlossenheit der Frauen im Mai 1832.</p>
 </header>
 
 <div class="container">
     <section>
         <h2>Die Pionierinnen</h2>
-        <p>In der starren Gesellschaft des <span class="term" data-def="Biedermeier">Biedermeiers</span> war politisches Engagement für Frauen lebensgefährlich. Dennoch folgten Tausende dem Ruf nach Freiheit. Die Einladung von <span class="term" data-def="Siebenpfeiffer">Philipp Jakob Siebenpfeiffer</span> war ein historischer Tabubruch.</p>
+        <p>Zwischen dem 27. und 30. Mai 1832 zogen fast 30.000 Menschen hinauf zum Hambacher Schloss. In der starren Gesellschaft des <span class="term" tabindex="0" role="button" aria-label="Biedermeier erklären" data-def="Biedermeier">Biedermeiers</span> war politisches Engagement für Frauen absolut unüblich. Die öffentliche Einladung von <span class="term" tabindex="0" role="button" aria-label="Siebenpfeiffer erklären" data-def="Siebenpfeiffer">Philipp Jakob Siebenpfeiffer</span> war daher ein historischer Tabubruch.</p>
         <div class="quote-card">
-            "Dass die deutschen Frauen den Geist der Freiheit atmen, bewiesen sie durch ihr zahlreiches Erscheinen auf dem Schlossberg."
+            "Auch die deutschen Frauen... sind als Genossinnen des freien Bürgers zur Teilnahme geladen."
         </div>
-        <p>Sie kamen nicht als schweigende Begleiterinnen, sondern als <span class="term" data-def="Genossinnen">Genossinnen</span>, bereit, die <span class="term" data-def="Restauration">Restauration</span> der Fürstenherrschaft herauszufordern.</p>
+        <p>Sie kamen nicht als schweigende Begleiterinnen, sondern als <span class="term" tabindex="0" role="button" aria-label="Genossinnen erklären" data-def="Genossinnen">Genossinnen</span>, bereit, die <span class="term" tabindex="0" role="button" aria-label="Restauration erklären" data-def="Restauration">Restauration</span> der Fürstenherrschaft herauszufordern.</p>
     </section>
 
     <section>
         <h2>Symbole der Nation</h2>
-        <p>Kein Symbol war 1832 mächtiger als die <span class="term" data-def="Urfahne">Hambacher Urfahne</span>. Gefertigt in geheimen Nähzirkeln von Frauen wie <span class="term" data-def="Abresch">Katharina Abresch</span>, wurde sie zum Banner einer ganzen Nation.</p>
-        <p>Diese Frauen riskierten alles: Ihre soziale Stellung, ihre Sicherheit und die Freiheit ihrer Familien. Trotz der strengen <span class="term" data-def="Zensur">Zensur</span> trugen sie ihre Überzeugung offen zur Schau – in Form von <span class="term" data-def="Kokarden">Kokarden</span> und schwarz-rot-goldenen Bändern.</p>
+        <p>Kein Symbol war damals mächtiger als die <span class="term" tabindex="0" role="button" aria-label="Urfahne erklären" data-def="Urfahne">Hambacher Urfahne</span>. In mühsamer Handarbeit von Frauen aus Neustadt – unter Anleitung von <span class="term" tabindex="0" role="button" aria-label="Abresch erklären" data-def="Abresch">Katharina Abresch</span> – gefertigt, wurde sie zum Banner einer ganzen Nation.</p>
+        <p>Diese Frauen riskierten viel: Ihre soziale Stellung und die Freiheit ihrer Familien. Trotz der strengen <span class="term" tabindex="0" role="button" aria-label="Zensur erklären" data-def="Zensur">Zensur</span> trugen sie ihre Überzeugung offen zur Schau – in Form von <span class="term" tabindex="0" role="button" aria-label="Kokarden erklären" data-def="Kokarden">Kokarden</span> und schwarz-rot-goldenen Schärpen auf dem Festgelände.</p>
     </section>
 
     <section>
         <h2>Das Erbe</h2>
-        <p>Nach dem Fest endete der Widerstand nicht. Als die Verhaftungswelle die <span class="term" data-def="Patrioten">Patrioten</span> traf, waren es die ersten <span class="term" data-def="Frauenvereine">Frauenvereine</span>, die Solidarität organisierten. Sie bereiteten den Boden für die <span class="term" data-def="Revolution">Märzrevolution 1848</span>.</p>
-        <p>Obwohl das <span class="term" data-def="Wahlrecht">Frauenwahlrecht</span> erst Generationen später erkämpft wurde, begann der Weg zur Gleichberechtigung genau hier, auf dem Hambacher Schloss.</p>
+        <p>Nach dem Fest endete der Widerstand nicht. Als die Verhaftungswelle die <span class="term" tabindex="0" role="button" aria-label="Patrioten erklären" data-def="Patrioten">Patrioten</span> traf, waren es die ersten <span class="term" tabindex="0" role="button" aria-label="Frauenvereine erklären" data-def="Frauenvereine">Frauenvereine</span>, die Solidarität organisierten. Sie bereiteten den Boden für die <span class="term" tabindex="0" role="button" aria-label="Revolution erklären" data-def="Revolution">Märzrevolution 1848</span>.</p>
+        <p>Obwohl das <span class="term" tabindex="0" role="button" aria-label="Wahlrecht erklären" data-def="Wahlrecht">Frauenwahlrecht</span> erst Generationen später (1918) erkämpft wurde, begann der Weg zur politischen Gleichberechtigung in Deutschland genau hier, auf dem Hambacher Schloss.</p>
     </section>
 </div>
 
-<aside id="side-panel">
-    <button class="close-btn" onclick="closePanel()">✕</button>
+<aside id="side-panel" aria-hidden="true">
+    <button class="close-btn" onclick="closePanel()" aria-label="Erklärung schließen">✕</button>
     <h3 id="panel-title">Begriff</h3>
     <p id="panel-content"></p>
 </aside>
@@ -324,23 +331,22 @@
         setTheme(currentTheme === 'light' ? 'dark' : 'light');
     });
 
-    // Load Saved Theme
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
 
     // GLOSSAR DATA
     const defs = {
         'Biedermeier': 'Die Epoche (1815-1848), in der sich viele Menschen aus Angst vor der Politik ins Private zurückzogen.',
-        'Siebenpfeiffer': 'Philipp Jakob Siebenpfeiffer war der Hauptinitiator des Festes und ein radikaler Vorkämpfer für Freiheit.',
+        'Siebenpfeiffer': 'Philipp Jakob Siebenpfeiffer war ein Journalist, Hauptinitiator des Festes und ein radikaler Vorkämpfer für Freiheit.',
         'Genossinnen': 'Ein damals revolutionärer Begriff, der Frauen als gleichberechtigte Mitstreiterinnen auf Augenhöhe ansah.',
         'Restauration': 'Die gewaltsame Wiederherstellung der alten Fürstenmacht nach dem Sieg über Napoleon.',
         'Urfahne': 'Die erste schwarz-rot-goldene Flagge der deutschen Geschichte, Symbol für Einheit und Freiheit.',
         'Abresch': 'Katharina Abresch leitete die Frauen aus Neustadt an, die die Hauptfahne des Festes nähten.',
         'Zensur': 'Die staatliche Kontrolle und Unterdrückung von freien Meinungen in Zeitungen und Büchern.',
         'Kokarden': 'Runde Stoffabzeichen in Nationalfarben, die offen an der Kleidung als politisches Bekenntnis getragen wurden.',
-        'Patrioten': 'Menschen, die für ein freies, demokratisches Deutschland kämpften.',
+        'Patrioten': 'Menschen, die für ein freies, vereintes und demokratisches Deutschland kämpften.',
         'Frauenvereine': 'Die Keimzelle der Frauenbewegung: Sie halfen Inhaftierten und organisierten politischen Widerstand.',
-        'Revolution': 'Die gewaltsame Erhebung des Volkes im März 1848 für Demokratie und Verfassung.',
+        'Revolution': 'Die gewaltsame Erhebung des Volkes im März 1848 für Demokratie und eine Verfassung.',
         'Wahlrecht': 'Das Recht, an Wahlen teilzunehmen. Für Frauen wurde dies in Deutschland erst 1918 Wirklichkeit.'
     };
 
@@ -349,16 +355,25 @@
         document.getElementById('panel-title').innerText = id;
         document.getElementById('panel-content').innerText = defs[id] || 'Definition folgt...';
         document.getElementById('side-panel').classList.add('active');
+        document.getElementById('side-panel').setAttribute('aria-hidden', 'false');
         document.getElementById('overlay').style.display = 'block';
     }
 
     function closePanel() {
         document.getElementById('side-panel').classList.remove('active');
+        document.getElementById('side-panel').setAttribute('aria-hidden', 'true');
         document.getElementById('overlay').style.display = 'none';
     }
 
+    // Event Listener für Maus und Tastatur (Enter-Taste)
     document.querySelectorAll('.term').forEach(t => {
-        t.onclick = () => openPanel(t.dataset.def);
+        t.addEventListener('click', () => openPanel(t.dataset.def));
+        t.addEventListener('keydown', (e) => {
+            if(e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openPanel(t.dataset.def);
+            }
+        });
     });
 
     document.getElementById('overlay').onclick = closePanel;
@@ -379,3 +394,9 @@
 </script>
 </body>
 </html>
+"""
+
+with open("index_v4.html", "w", encoding="utf-8") as f:
+    f.write(html_content_v4)
+
+print("index_v4.html (Fehlerkorrigiert) erfolgreich erstellt.")
