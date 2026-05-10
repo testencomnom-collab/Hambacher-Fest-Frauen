@@ -9,35 +9,35 @@
         /* CSS VARIABLEN FÜR THEMES */
         :root {
             --bg-color: #f8f9fa;
-            --surface: rgba(255, 255, 255, 0.9);
+            --surface: rgba(255, 255, 255, 0.95);
             --text-main: #1a1a1a;
-            --text-muted: #636e72;
+            --text-muted: #4a4a4a;
             --accent: #e63946; 
-            --gold: #ffb703;
-            --header-overlay: rgba(0,0,0,0.4);
-            --shadow: 0 10px 30px rgba(0,0,0,0.05);
-            --border: rgba(0,0,0,0.05);
+            --gold: #d4a017;
+            --header-overlay: rgba(0,0,0,0.5);
+            --shadow: 0 15px 35px rgba(0,0,0,0.1);
+            --border: rgba(0,0,0,0.08);
             --panel-bg: #ffffff;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         [data-theme="dark"] {
-            --bg-color: #0f0f0f;
-            --surface: rgba(28, 28, 28, 0.9);
-            --text-main: #f5f5f5;
-            --text-muted: #a0a0a0;
+            --bg-color: #0d0d0d;
+            --surface: rgba(30, 30, 30, 0.95);
+            --text-main: #f0f0f0;
+            --text-muted: #b0b0b0;
             --accent: #ff4d5a;
             --gold: #ffc300;
-            --header-overlay: rgba(0,0,0,0.7);
-            --shadow: 0 10px 40px rgba(0,0,0,0.4);
+            --header-overlay: rgba(0,0,0,0.75);
+            --shadow: 0 15px 45px rgba(0,0,0,0.5);
             --border: rgba(255,255,255,0.1);
             --panel-bg: #1a1a1a;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
         }
 
         body {
@@ -45,27 +45,25 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.8;
-            transition: background-color 0.5s ease, color 0.5s ease;
+            transition: background-color 0.4s ease, color 0.4s ease;
             overflow-x: hidden;
         }
 
         /* NAVIGATION & THEME TOGGLE */
         nav {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 25px;
+            right: 25px;
             z-index: 1100;
-            display: flex;
-            gap: 15px;
         }
 
         .icon-btn {
             background: var(--surface);
             border: 1px solid var(--border);
             color: var(--text-main);
-            width: 45px;
-            height: 45px;
-            border-radius: 12px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -76,7 +74,7 @@
         }
 
         .icon-btn:hover, .icon-btn:focus {
-            transform: translateY(-3px);
+            transform: scale(1.1) rotate(15deg);
             border-color: var(--accent);
             outline: none;
         }
@@ -87,14 +85,14 @@
             top: 0;
             left: 0;
             width: 0%;
-            height: 4px;
+            height: 5px;
             background: linear-gradient(to right, #000, var(--accent), var(--gold));
             z-index: 2000;
         }
 
         /* HERO SECTION */
         header {
-            height: 80vh;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -111,36 +109,36 @@
 
         header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            margin-bottom: 15px;
+            font-size: clamp(2.8rem, 10vw, 5rem);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
         header p {
-            font-size: 1.2rem;
-            max-width: 700px;
+            font-size: 1.3rem;
+            max-width: 800px;
             font-weight: 300;
-            letter-spacing: 0.5px;
         }
 
         /* CONTENT */
         .container {
-            max-width: 850px;
-            margin: -80px auto 100px;
+            max-width: 900px;
+            margin: -100px auto 100px;
             position: relative;
             padding: 0 20px;
         }
 
         section {
             background: var(--surface);
-            padding: 50px;
-            margin-bottom: 40px;
-            border-radius: 24px;
+            padding: 60px;
+            margin-bottom: 50px;
+            border-radius: 30px;
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
         }
 
         section.visible {
@@ -150,81 +148,87 @@
 
         h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--accent);
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 10px;
         }
 
-        h2::after {
-            content: '';
-            flex-grow: 1;
-            height: 1px;
-            background: var(--border);
+        p { 
+            margin-bottom: 25px; 
+            font-size: 1.15rem; 
         }
 
         /* INTERAKTIVE BEGRIFFE */
         .term {
             color: var(--accent);
-            font-weight: 700;
+            font-weight: 800;
             cursor: help;
-            border-bottom: 2px solid transparent;
+            text-decoration: underline decoration-dotted var(--gold) 3px;
+            text-underline-offset: 5px;
             transition: var(--transition);
+            padding: 2px 4px;
             display: inline-block;
         }
 
         .term:hover, .term:focus {
-            border-bottom-color: var(--accent);
-            background: rgba(230, 57, 70, 0.1);
+            background: var(--gold);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
             outline: none;
-            border-radius: 4px;
         }
 
         .quote-card {
-            border-left: 5px solid var(--gold);
-            background: rgba(255, 183, 3, 0.05);
-            padding: 30px;
-            margin: 40px 0;
-            border-radius: 0 15px 15px 0;
+            border-left: 8px solid var(--gold);
+            background: rgba(212, 160, 23, 0.1);
+            padding: 40px;
+            margin: 45px 0;
+            border-radius: 0 20px 20px 0;
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            line-height: 1.6;
         }
 
         /* SIDE PANEL */
         #side-panel {
             position: fixed;
-            right: -450px;
+            right: -500px;
             top: 0;
-            width: 450px;
+            width: 500px;
             height: 100vh;
             background: var(--panel-bg);
             z-index: 3000;
-            box-shadow: -15px 0 50px rgba(0,0,0,0.2);
-            transition: var(--transition);
-            padding: 80px 40px;
+            box-shadow: -20px 0 60px rgba(0,0,0,0.3);
+            transition: cubic-bezier(0.77, 0, 0.175, 1) 0.6s;
+            padding: 100px 50px;
+            overflow-y: auto;
         }
 
         #side-panel.active { right: 0; }
 
         #panel-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--accent);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         #panel-content {
-            font-size: 1.15rem;
-            color: var(--text-muted);
+            font-size: 1.2rem;
+            color: var(--text-main);
+            border-top: 1px solid var(--border);
+            padding-top: 25px;
         }
 
         .close-btn {
             position: absolute;
-            top: 30px;
-            right: 30px;
-            font-size: 24px;
+            top: 40px;
+            right: 40px;
+            font-size: 30px;
             background: none;
             border: none;
             color: var(--text-muted);
@@ -239,23 +243,24 @@
         #overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(4px);
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
             display: none;
             z-index: 2500;
         }
 
         footer {
-            background: #111;
-            color: #777;
-            padding: 60px 20px;
+            background: #000;
+            color: #888;
+            padding: 80px 20px;
             text-align: center;
+            font-size: 0.9rem;
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            section { padding: 30px 20px; }
-            #side-panel { width: 100%; right: -100%; }
+        @media (max-width: 768px) {
+            section { padding: 40px 25px; }
+            #side-panel { width: 100%; right: -100%; padding: 80px 30px; }
+            header h1 { font-size: 3rem; }
         }
     </style>
 </head>
@@ -266,37 +271,41 @@
 
 <nav>
     <button class="icon-btn" id="theme-toggle" aria-label="Farbschema wechseln">
-        <svg id="theme-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
+        <svg id="theme-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
     </button>
 </nav>
 
 <header>
-    <h1>Die Frauen von Hambach</h1>
-    <p>Ein interaktiver Rückblick auf den Mut und die Entschlossenheit der Frauen im Mai 1832.</p>
+    <h1>Freiheit & Gleichheit</h1>
+    <p>Das Hambacher Fest 1832 und der vergessene Mut der Frauen.</p>
 </header>
 
 <div class="container">
     <section>
-        <h2>Die Pionierinnen</h2>
-        <p>Zwischen dem 27. und 30. Mai 1832 zogen fast 30.000 Menschen hinauf zum Hambacher Schloss. In der starren Gesellschaft des <span class="term" tabindex="0" role="button" aria-label="Biedermeier erklären" data-def="Biedermeier">Biedermeiers</span> war politisches Engagement für Frauen absolut unüblich. Die öffentliche Einladung von <span class="term" tabindex="0" role="button" aria-label="Siebenpfeiffer erklären" data-def="Siebenpfeiffer">Philipp Jakob Siebenpfeiffer</span> war daher ein historischer Tabubruch.</p>
+        <h2>Der historische Aufbruch</h2>
+        <p>Vom 27. bis 30. Mai 1832 verwandelte sich das <span class="term" tabindex="0" role="button" aria-label="Hambacher Schloss erklären" data-def="Hambacher Schloss">Hambacher Schloss</span> in das Zentrum der deutschen <span class="term" tabindex="0" role="button" aria-label="Nationalbewegung erklären" data-def="Nationalbewegung">Nationalbewegung</span>. In einer Ära, die von der <span class="term" tabindex="0" role="button" aria-label="Restauration erklären" data-def="Restauration">Restauration</span> und dem Rückzug ins <span class="term" tabindex="0" role="button" aria-label="Biedermeier erklären" data-def="Biedermeier">Biedermeier</span> geprägt war, forderten knapp 30.000 Menschen <span class="term" tabindex="0" role="button" aria-label="Volkssouveränität erklären" data-def="Volkssouveränität">Volkssouveränität</span> und ein geeintes Deutschland.</p>
+        
+        <p>Einzigartig war die Rolle der Frauen: Entgegen aller gesellschaftlichen Konventionen rief <span class="term" tabindex="0" role="button" aria-label="Siebenpfeiffer erklären" data-def="Siebenpfeiffer">Philipp Jakob Siebenpfeiffer</span> sie ausdrücklich zur Teilnahme auf.</p>
+        
         <div class="quote-card">
-            "Auch die deutschen Frauen... sind als Genossinnen des freien Bürgers zur Teilnahme geladen."
+            "Auch die deutschen Frauen, denen das Gesetz die politische Rechte verweigert, sind als Genossinnen des freien Bürgers zur Teilnahme geladen."
         </div>
-        <p>Sie kamen nicht als schweigende Begleiterinnen, sondern als <span class="term" tabindex="0" role="button" aria-label="Genossinnen erklären" data-def="Genossinnen">Genossinnen</span>, bereit, die <span class="term" tabindex="0" role="button" aria-label="Restauration erklären" data-def="Restauration">Restauration</span> der Fürstenherrschaft herauszufordern.</p>
+        
+        <p>Sie kamen als <span class="term" tabindex="0" role="button" aria-label="Genossinnen erklären" data-def="Genossinnen">Genossinnen</span> – ein Begriff, der damals eine politische Gleichberechtigung auf Augenhöhe suggerierte, die erst fast 100 Jahre später Gesetz werden sollte.</p>
     </section>
 
     <section>
-        <h2>Symbole der Nation</h2>
-        <p>Kein Symbol war damals mächtiger als die <span class="term" tabindex="0" role="button" aria-label="Urfahne erklären" data-def="Urfahne">Hambacher Urfahne</span>. In mühsamer Handarbeit von Frauen aus Neustadt – unter Anleitung von <span class="term" tabindex="0" role="button" aria-label="Abresch erklären" data-def="Abresch">Katharina Abresch</span> – gefertigt, wurde sie zum Banner einer ganzen Nation.</p>
-        <p>Diese Frauen riskierten viel: Ihre soziale Stellung und die Freiheit ihrer Familien. Trotz der strengen <span class="term" tabindex="0" role="button" aria-label="Zensur erklären" data-def="Zensur">Zensur</span> trugen sie ihre Überzeugung offen zur Schau – in Form von <span class="term" tabindex="0" role="button" aria-label="Kokarden erklären" data-def="Kokarden">Kokarden</span> und schwarz-rot-goldenen Schärpen auf dem Festgelände.</p>
+        <h2>Das Banner der Freiheit</h2>
+        <p>Das wichtigste Symbol des Festes war die <span class="term" tabindex="0" role="button" aria-label="Urfahne erklären" data-def="Urfahne">Hambacher Urfahne</span>. Frauen aus Neustadt an der Haardt, koordiniert von <span class="term" tabindex="0" role="button" aria-label="Abresch erklären" data-def="Abresch">Katharina Abresch</span>, fertigten sie in mühevoller Handarbeit an. Als zentrale Botschaft stickten sie in goldenen Lettern die Worte <span class="term" tabindex="0" role="button" aria-label="Wiedergeburt erklären" data-def="Wiedergeburt">"Deutschlands Wiedergeburt"</span> auf den mittleren roten Streifen der Fahne.</p>
+        
+        <p>Neben den großen Bannern trugen viele Teilnehmerinnen <span class="term" tabindex="0" role="button" aria-label="Kokarden erklären" data-def="Kokarden">Kokarden</span> und Schärpen in Schwarz-Rot-Gold. Eine der profiliertesten jungen Frauen vor Ort war <span class="term" tabindex="0" role="button" aria-label="Hitzfeld erklären" data-def="Hitzfeld">Mathilde Hitzfeld</span>. Sie wurde später als „Heldin der Pfalz“ bekannt, weil sie trotz strengster staatlicher <span class="term" tabindex="0" role="button" aria-label="Zensur erklären" data-def="Zensur">Zensur</span> und drohender Verfolgung unerschütterlich für den <span class="term" tabindex="0" role="button" aria-label="Liberalismus erklären" data-def="Liberalismus">Liberalismus</span> eintrat.</p>
     </section>
 
     <section>
-        <h2>Das Erbe</h2>
-        <p>Nach dem Fest endete der Widerstand nicht. Als die Verhaftungswelle die <span class="term" tabindex="0" role="button" aria-label="Patrioten erklären" data-def="Patrioten">Patrioten</span> traf, waren es die ersten <span class="term" tabindex="0" role="button" aria-label="Frauenvereine erklären" data-def="Frauenvereine">Frauenvereine</span>, die Solidarität organisierten. Sie bereiteten den Boden für die <span class="term" tabindex="0" role="button" aria-label="Revolution erklären" data-def="Revolution">Märzrevolution 1848</span>.</p>
-        <p>Obwohl das <span class="term" tabindex="0" role="button" aria-label="Wahlrecht erklären" data-def="Wahlrecht">Frauenwahlrecht</span> erst Generationen später (1918) erkämpft wurde, begann der Weg zur politischen Gleichberechtigung in Deutschland genau hier, auf dem Hambacher Schloss.</p>
+        <h2>Das Erbe von Hambach</h2>
+        <p>Nach dem Fest reagierten die Fürsten mit harten Strafen und Verhaftungswellen. Doch der Widerstand lebte in den ersten <span class="term" tabindex="0" role="button" aria-label="Frauenvereine erklären" data-def="Frauenvereine">Frauenvereinen</span> weiter. Diese Gruppen organisierten heimlich Spenden für inhaftierte <span class="term" tabindex="0" role="button" aria-label="Patrioten erklären" data-def="Patrioten">Patrioten</span> und hielten die Idee der Demokratie in ihren Familien wach.</p>
+        
+        <p>Obwohl die spätere <span class="term" tabindex="0" role="button" aria-label="Revolution erklären" data-def="Revolution">Märzrevolution 1848</span> scheiterte, war der Geist von Hambach nicht mehr auszulöschen. Der lange Weg zum allgemeinen <span class="term" tabindex="0" role="button" aria-label="Wahlrecht erklären" data-def="Wahlrecht">Wahlrecht</span> für Frauen, das erst 1918 erreicht wurde, nahm genau hier seinen Anfang – an einem Ort, an dem Frauen erstmals öffentlich als gleichwertige politische Akteurinnen sichtbar wurden.</p>
     </section>
 </div>
 
@@ -307,7 +316,7 @@
 </aside>
 
 <footer>
-    <p>&copy; 2024 | Geschichte erleben | Optimiert für GitHub Pages</p>
+    <p>&copy; 2024 | Projekt: Geschichte der Demokratie | Optimiert für GitHub Pages</p>
 </footer>
 
 <script>
@@ -316,43 +325,49 @@
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
 
-    const sunPath = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
-    const moonPath = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+    const sunSVG = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+    const moonSVG = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
 
     function setTheme(theme) {
         body.setAttribute('data-theme', theme);
-        themeIcon.innerHTML = theme === 'dark' ? sunPath : moonPath;
+        themeIcon.innerHTML = theme === 'dark' ? sunSVG : moonSVG;
         localStorage.setItem('theme', theme);
     }
 
     themeToggle.addEventListener('click', () => {
-        const currentTheme = body.getAttribute('data-theme');
-        setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        const isDark = body.getAttribute('data-theme') === 'dark';
+        setTheme(isDark ? 'light' : 'dark');
     });
 
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
+    // Theme beim Laden prüfen
+    setTheme(localStorage.getItem('theme') || 'light');
 
-    // GLOSSAR DATA
+    // GLOSSAR DATEN (Alle Begriffe lückenlos erklärt!)
     const defs = {
-        'Biedermeier': 'Die Epoche (1815-1848), in der sich viele Menschen aus Angst vor der Politik ins Private zurückzogen.',
-        'Siebenpfeiffer': 'Philipp Jakob Siebenpfeiffer war ein Journalist, Hauptinitiator des Festes und ein radikaler Vorkämpfer für Freiheit.',
-        'Genossinnen': 'Ein damals revolutionärer Begriff, der Frauen als gleichberechtigte Mitstreiterinnen auf Augenhöhe ansah.',
-        'Restauration': 'Die gewaltsame Wiederherstellung der alten Fürstenmacht nach dem Sieg über Napoleon.',
-        'Urfahne': 'Die erste schwarz-rot-goldene Flagge der deutschen Geschichte, Symbol für Einheit und Freiheit.',
-        'Abresch': 'Katharina Abresch leitete die Frauen aus Neustadt an, die die Hauptfahne des Festes nähten.',
-        'Zensur': 'Die staatliche Kontrolle und Unterdrückung von freien Meinungen in Zeitungen und Büchern.',
-        'Kokarden': 'Runde Stoffabzeichen in Nationalfarben, die offen an der Kleidung als politisches Bekenntnis getragen wurden.',
-        'Patrioten': 'Menschen, die für ein freies, vereintes und demokratisches Deutschland kämpften.',
-        'Frauenvereine': 'Die Keimzelle der Frauenbewegung: Sie halfen Inhaftierten und organisierten politischen Widerstand.',
-        'Revolution': 'Die gewaltsame Erhebung des Volkes im März 1848 für Demokratie und eine Verfassung.',
-        'Wahlrecht': 'Das Recht, an Wahlen teilzunehmen. Für Frauen wurde dies in Deutschland erst 1918 Wirklichkeit.'
+        'Hambacher Schloss': 'Eine heutige Schlossruine bei Neustadt an der Weinstraße. Sie gilt als "Wiege der deutschen Demokratie", da hier 1832 das erste große Freiheitsfest stattfand.',
+        'Nationalbewegung': 'Eine politische Strömung des 19. Jahrhunderts mit dem Ziel, die vielen zersplitterten deutschen Kleinstaaten zu einem einzigen, freien Nationalstaat zu vereinen.',
+        'Restauration': 'Die Epoche nach 1815, in der die Fürsten versuchten, die alte monarchische Ordnung (von vor Napoleon) wiederherzustellen und bürgerliche Freiheiten massiv unterdrückten.',
+        'Biedermeier': 'Die Zeit von 1815 bis 1848, geprägt von einem gesellschaftlichen Rückzug ins Private (Häuslichkeit, Familie), oft aus Angst vor politischer Verfolgung durch den Staat.',
+        'Volkssouveränität': 'Das demokratische Grundprinzip, dass alle Staatsgewalt vom Volk ausgeht und nicht von einem von Gott eingesetzten Monarchen.',
+        'Siebenpfeiffer': 'Philipp Jakob Siebenpfeiffer (1789–1845) war ein radikaler Journalist und der Hauptorganisator des Hambacher Festes. Er forderte vehement Pressefreiheit und eine Republik.',
+        'Genossinnen': 'Ein für die damalige Zeit hochmoderner und fast revolutionärer Begriff, der Frauen als gleichberechtigte Partnerinnen im politischen Kampf ansprach.',
+        'Urfahne': 'Die erste schwarz-rot-goldene Flagge in der heutigen Bedeutung. Sie wurde 1832 von Frauen genäht und als Hauptbanner auf das Schloss getragen.',
+        'Abresch': 'Katharina Abresch war die Ehefrau eines Neustadter Kaufmanns. Sie organisierte und leitete die Gruppe der Frauen, welche die Hauptfahne fertigten.',
+        'Wiedergeburt': 'Die gestickte Inschrift "Deutschlands Wiedergeburt" auf der Urfahne symbolisierte den starken Wunsch, dass Deutschland als freie, geeinte Nation neu geboren werden sollte.',
+        'Kokarden': 'Runde Stoffabzeichen in den Nationalfarben (Schwarz-Rot-Gold), die mutig und offen an Hüten oder der Kleidung getragen wurden, um politische Gesinnung zu zeigen.',
+        'Hitzfeld': 'Mathilde Hitzfeld war eine junge, couragierte Aktivistin aus Kirchheimbolanden. Sie wurde nach dem Fest zum Symbol für den weiblichen Widerstand gegen die bayerische Justiz.',
+        'Zensur': 'Die staatliche Überprüfung und strenge Unterdrückung von Druckerzeugnissen (Zeitungen, Bücher), um Kritik am Herrschaftssystem der Fürsten zu verhindern.',
+        'Liberalismus': 'Eine politische Weltanschauung, die die Freiheit des Einzelnen, eine geschriebene Verfassung und die Begrenzung der monarchischen Herrschermacht fordert.',
+        'Frauenvereine': 'Frühe politische Zusammenschlüsse von Frauen, die oft im Geheimen arbeiteten mussten, um inhaftierte Demokraten zu unterstützen und politische Bildung zu fördern.',
+        'Patrioten': 'In der Sprache der damaligen Zeit bezeichnete dies Menschen, die sich für Einheit, Freiheit und Verfassung ihres Vaterlandes einsetzten (nicht zu verwechseln mit heutigem Nationalismus).',
+        'Revolution': 'Gemeint ist die gewaltsame Erhebung des Volkes in der Märzrevolution 1848, die direkt auf den Forderungen von Hambach aufbaute und ein Parlament erzwang.',
+        'Wahlrecht': 'Das Recht der Bürger, Volksvertreter zu wählen. In Deutschland durften Frauen erst nach dem Ersten Weltkrieg (während der Novemberrevolution 1918) das erste Mal wählen.'
     };
 
-    // UI BEHAVIOR
+    // UI LOGIC (Seiten-Panel öffnen/schließen)
     function openPanel(id) {
         document.getElementById('panel-title').innerText = id;
-        document.getElementById('panel-content').innerText = defs[id] || 'Definition folgt...';
+        document.getElementById('panel-content').innerText = defs[id] || 'Definition nicht gefunden.';
         document.getElementById('side-panel').classList.add('active');
         document.getElementById('side-panel').setAttribute('aria-hidden', 'false');
         document.getElementById('overlay').style.display = 'block';
@@ -364,7 +379,7 @@
         document.getElementById('overlay').style.display = 'none';
     }
 
-    // Event Listener für Maus und Tastatur (Enter-Taste)
+    // Event Listener für Maus und Tastatur (Barrierefreiheit)
     document.querySelectorAll('.term').forEach(t => {
         t.addEventListener('click', () => openPanel(t.dataset.def));
         t.addEventListener('keydown', (e) => {
@@ -377,14 +392,14 @@
 
     document.getElementById('overlay').onclick = closePanel;
 
-    // SCROLL ANIMATION
+    // SCROLL ANIMATIONS (Fade-In der Sektionen)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
 
     document.querySelectorAll('section').forEach(s => observer.observe(s));
 
-    // PROGRESS BAR
+    // PROGRESS BAR LOGIC
     window.onscroll = () => {
         let winScroll = document.documentElement.scrollTop;
         let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
